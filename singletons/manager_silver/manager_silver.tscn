@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wbi4it18ciar"]
+
+[ext_resource type="Script" path="res://singletons/manager_silver/manager_silver.gd" id="1_sd850"]
+
+[node name="ManagerSilver" type="Node"]
+script = ExtResource("1_sd850")
