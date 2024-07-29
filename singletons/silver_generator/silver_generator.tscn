@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl5t3dlirbq4t"]
+
+[ext_resource type="Script" path="res://singletons/silver_generator/silver_generator.gd" id="1_jpokb"]
+
+[node name="SilverGenerator" type="Node"]
+script = ExtResource("1_jpokb")
+
+[node name="Timer" type="Timer" parent="."]
