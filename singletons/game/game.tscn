@@ -1,26 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://pyn5vmg1peyl"]
+[gd_scene load_steps=4 format=3 uid="uid://pyn5vmg1peyl"]
 
 [ext_resource type="PackedScene" uid="uid://wbi4it18ciar" path="res://singletons/manager_silver/manager_silver.tscn" id="1_5jhbe"]
 [ext_resource type="PackedScene" uid="uid://cl5t3dlirbq4t" path="res://singletons/silver_generator/silver_generator.tscn" id="2_vfa15"]
-[ext_resource type="PackedScene" uid="uid://cfgqkghn7jtn" path="res://components/label_silver/label_silver.tscn" id="2_y3v52"]
-[ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="3_kvnb8"]
+[ext_resource type="PackedScene" uid="uid://cu26oi1spy512" path="res://scenes/user_interface/user_interface.tscn" id="3_rtepl"]
 
 [node name="Game" type="Node"]
 
-[node name="ManagerSilver" parent="." instance=ExtResource("1_5jhbe")]
+[node name="Singletons" type="Node" parent="."]
 
-[node name="SilverGenerator" parent="." instance=ExtResource("2_vfa15")]
+[node name="ManagerSilver" parent="Singletons" instance=ExtResource("1_5jhbe")]
 
-[node name="GeneratorToggleButton" parent="." instance=ExtResource("3_kvnb8")]
-focus_mode = 0
+[node name="SilverGenerator" parent="Singletons" instance=ExtResource("2_vfa15")]
 
-[node name="LabelSilver" parent="." instance=ExtResource("2_y3v52")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -0.5
-offset_right = 0.5
-offset_bottom = 39.0
-grow_vertical = 1
-theme_type_variation = &"HeaderLarge"
+[node name="UserInterface" parent="." instance=ExtResource("3_rtepl")]

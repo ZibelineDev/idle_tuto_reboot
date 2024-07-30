@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu26oi1spy512"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/user_interface.gd" id="1_yjqbu"]
+[ext_resource type="Script" path="res://scenes/user_interface/navigation_button.gd" id="2_w1f2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lwjp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjqbu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+
+[node name="Navigator" type="ScrollContainer" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/Navigator"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/Navigator/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="HBoxContainer/LeftPanel/Navigator/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "View 1"
+script = ExtResource("2_w1f2f")
+navigation_index = 0
+
+[node name="Button2" type="Button" parent="HBoxContainer/LeftPanel/Navigator/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "View 2
+"
+script = ExtResource("2_w1f2f")
+navigation_index = 1
+
+[node name="Resources" type="Control" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainView" type="TabContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6lwjp")
+tabs_visible = false
+
+[node name="View1" type="Control" parent="HBoxContainer/MainView"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MainView/View1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "View 1"
+
+[node name="View2" type="Control" parent="HBoxContainer/MainView"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MainView/View2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "View 2"
