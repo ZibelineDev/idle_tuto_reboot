@@ -6,8 +6,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lwjp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="UserInterface" type="Control"]
-layout_mode = 3
+[node name="UserInterface" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

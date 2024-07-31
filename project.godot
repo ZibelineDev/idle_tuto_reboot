@@ -42,6 +42,10 @@ folder_colors={
 import/blender/enabled=false
 import/fbx/enabled=false
 
+[gui]
+
+theme/custom="res://assets/styles/theme/default_theme.tres"
+
 [input]
 
 Double={
