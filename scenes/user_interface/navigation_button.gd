@@ -1,4 +1,4 @@
-extends Button
+extends LinkButton
 
 @export var navigation_index : int = -1
 
