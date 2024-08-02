@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ttrgafns0xu7"]
+
+[ext_resource type="Texture2D" uid="uid://yb33wwvmflq5" path="res://assets/icons/purse_and_coin_grey.png" id="1_wsrib"]
+[ext_resource type="Texture2D" uid="uid://ckikuieqx4p5f" path="res://assets/icons/purse_and_coin.png" id="2_3fufw"]
+[ext_resource type="Script" path="res://components/radial_progress_bar/radial_progress_bar.gd" id="3_yf8km"]
+
+[node name="RadialProgressBar" type="TextureProgressBar"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 93.0
+fill_mode = 4
+texture_under = ExtResource("1_wsrib")
+texture_progress = ExtResource("2_3fufw")
+script = ExtResource("3_yf8km")

@@ -1,7 +1,7 @@
 extends Button
 
-const GENERATOR_ON_TEXT : String = "Generator : On"
-const GENERATOR_OFF_TEXT : String = "Generator : Off"
+const GENERATOR_ON_TEXT : String = "On"
+const GENERATOR_OFF_TEXT : String = "Off"
 
 
 func _ready() -> void :

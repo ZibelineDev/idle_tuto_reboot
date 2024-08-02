@@ -1,0 +1,197 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1g4fpevjbf88"]
+
+[ext_resource type="StyleBox" uid="uid://b47mwlgctp6de" path="res://assets/styles/style_box_flat/red_container.tres" id="1_qvqbw"]
+[ext_resource type="PackedScene" uid="uid://ttrgafns0xu7" path="res://components/radial_progress_bar/radial_progress_bar.tscn" id="2_bi748"]
+[ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="3_xvw5t"]
+[ext_resource type="Script" path="res://scenes/village/upgrade_01_button.gd" id="4_grbsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8l535"]
+bg_color = Color(0.196078, 0.0666667, 0.0666667, 1)
+border_color = Color(0.196078, 0.0666667, 0.0666667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[node name="Village" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_qvqbw")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderLarge"
+text = "Village
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_qvqbw")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8l535")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Trading Common Goods"
+
+[node name="Label2" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Gain silver by trading commong goods in the village. Smart trades will allow you to make some  profits."
+
+[node name="RadialProgressBar" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_bi748")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GeneratorToggleButton" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer" instance=ExtResource("3_xvw5t")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Invest Funds"
+
+[node name="Label2" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Invest some Silver in the Market.
+Increase profits."
+
+[node name="Button" type="Button" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+text = "Purchase"
+script = ExtResource("4_grbsx")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Networking"
+
+[node name="Label2" type="Label" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "More clients means less time prospecting.
+Faster trades."
+
+[node name="Button" type="Button" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/GridContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+text = "Purchase"
