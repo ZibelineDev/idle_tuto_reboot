@@ -51,6 +51,15 @@ func get_upgrade_01() -> SilverGeneratorUpgrade01 :
 	return _upgrade_01
 
 
+func get_progress() -> float : 
+	if not is_active() : return 0
+	
+	var progress : float = 1 - (_timer.time_left / _timer.wait_time)
+	progress = progress * 100
+	
+	return progress
+
+
 func _generate_silver() -> void :
 	var roll : int = randi_range(_generated_silver_per_tick.x, _generated_silver_per_tick.y)
 	

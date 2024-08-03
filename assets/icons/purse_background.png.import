@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5cskke7djqh6"
-path="res://.godot/imported/mushroom-house (1).png-101f60e28662b593ffe850040ae629ed.ctex"
+uid="uid://cofxyfhu2ktkc"
+path="res://.godot/imported/purse_background.png-fd5764a8021cae413f250b621aa259d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/mushroom-house (1).png"
-dest_files=["res://.godot/imported/mushroom-house (1).png-101f60e28662b593ffe850040ae629ed.ctex"]
+source_file="res://assets/icons/purse_background.png"
+dest_files=["res://.godot/imported/purse_background.png-fd5764a8021cae413f250b621aa259d9.ctex"]
 
 [params]
 
