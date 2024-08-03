@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmkdxgjy3xdrj"]
+[gd_scene load_steps=4 format=3 uid="uid://cmkdxgjy3xdrj"]
 
 [ext_resource type="Script" path="res://scenes/views/village/trading_goods.gd" id="1_btauh"]
+[ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="2_uhwqb"]
+[ext_resource type="Script" path="res://scenes/views/village/silver_generator_upgrade_01.gd" id="3_ls47u"]
 
 [node name="Village" type="MarginContainer"]
 anchors_preset = 15
@@ -63,12 +65,9 @@ text = "The town is full of trading opportunities.
 Trade items to gain some Silver."
 autowrap_mode = 3
 
-[node name="Toggle" type="Button" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GeneratorToggleButton" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_uhwqb")]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "On/Off"
 
 [node name="CollapseButton" type="Button" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -90,6 +89,7 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+script = ExtResource("3_ls47u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/CollapseContainer/Upgrade01"]
 layout_mode = 2
