@@ -18,7 +18,13 @@ var _max_level : int = 3
 
 
 func get_title() -> String : 
-	return "Investment Fund"
+	var text : String =  "Investment Fund"
+	
+	if not data.upgrade_01_level : return text
+	
+	text += " (%s)" %data.upgrade_01_level
+	
+	return text
 
 
 func get_description() -> String : 

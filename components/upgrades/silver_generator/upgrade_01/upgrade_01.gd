@@ -50,6 +50,7 @@ func _on_silver_updated() -> void :
 func _on_upgrade_01_leveled_up() -> void : 
 	_update_button_text()
 	_update_button_availability()
+	_update_title()
 
 
 func _on_purchas_button_pressed() -> void :
