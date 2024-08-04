@@ -7,7 +7,8 @@ func _ready() -> void :
 
 
 func _update_text() -> void : 
-	text = "Silver : %s" %ManagerSilver.ref.get_silver()
+	text = "Silver : %s" %StringFormat.thousands_sep(ManagerSilver.ref.get_silver())
+	tooltip_text = StringFormat.thousands_sep(ManagerSilver.ref.get_silver())
 
 
 func _on_silver_updated() -> void : 
