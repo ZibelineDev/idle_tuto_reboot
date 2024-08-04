@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct2n74mmxlkcu"]
+
+[ext_resource type="Texture2D" uid="uid://ceyqsxia2y8xt" path="res://assets/icons/log.png" id="1_2w71u"]
+[ext_resource type="Script" path="res://components/label_log/label_log.gd" id="1_aqtel"]
+[ext_resource type="Script" path="res://components/label_log/label.gd" id="3_6l12d"]
+
+[node name="LabelLog" type="HBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqtel")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("1_2w71u")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text_overrun_behavior = 3
+script = ExtResource("3_6l12d")

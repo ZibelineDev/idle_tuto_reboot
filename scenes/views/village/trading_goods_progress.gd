@@ -2,4 +2,4 @@ extends TextureProgressBar
 
 
 func _process(_delta: float) -> void :
-	value = SilverGenerator.ref.get_progress()
+	value = GeneratorSilver.ref.get_progress()

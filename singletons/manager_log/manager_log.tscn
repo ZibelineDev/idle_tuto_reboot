@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpf3oqwngfo4n"]
+
+[ext_resource type="Script" path="res://singletons/manager_log/manager_log.gd" id="1_hhqg6"]
+
+[node name="ManagerLog" type="Node"]
+script = ExtResource("1_hhqg6")

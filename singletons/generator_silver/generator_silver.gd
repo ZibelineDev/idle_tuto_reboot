@@ -1,7 +1,7 @@
-class_name SilverGenerator
+class_name GeneratorSilver
 extends Node
 
-static var ref : SilverGenerator
+static var ref : GeneratorSilver
 
 func _init() -> void :
 	if not ref : ref = self

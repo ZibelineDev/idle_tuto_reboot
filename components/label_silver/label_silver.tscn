@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://components/label_silver/label_silver.gd" id="1_4sa7j"]
 [ext_resource type="Texture2D" uid="uid://cgo83v0ihrk3x" path="res://assets/icons/coins.png" id="1_fvx8s"]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="LabelSilver" type="HBoxContainer"]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -19,7 +19,7 @@ layout_mode = 2
 texture = ExtResource("1_fvx8s")
 expand_mode = 1
 
-[node name="LabelSilver" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1

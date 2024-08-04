@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu26oi1spy512"]
+[gd_scene load_steps=8 format=3 uid="uid://cu26oi1spy512"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/user_interface.gd" id="1_yjqbu"]
 [ext_resource type="Texture2D" uid="uid://b5cskke7djqh6" path="res://assets/icons/mushroom_house.png" id="2_argk2"]
 [ext_resource type="Script" path="res://scenes/user_interface/navigation_button.gd" id="2_w1f2f"]
 [ext_resource type="PackedScene" uid="uid://cfgqkghn7jtn" path="res://components/label_silver/label_silver.tscn" id="4_f8na8"]
 [ext_resource type="PackedScene" uid="uid://cmkdxgjy3xdrj" path="res://scenes/views/village/village.tscn" id="5_24757"]
+[ext_resource type="PackedScene" uid="uid://ct2n74mmxlkcu" path="res://components/label_log/label_log.tscn" id="5_cpj55"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lwjp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -74,6 +75,9 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 
 [node name="LabelSilver" parent="HBoxContainer/LeftPanel/Resources/VBoxContainer" instance=ExtResource("4_f8na8")]
+layout_mode = 2
+
+[node name="LabelLog" parent="HBoxContainer/LeftPanel/Resources/VBoxContainer" instance=ExtResource("5_cpj55")]
 layout_mode = 2
 
 [node name="MainView" type="TabContainer" parent="HBoxContainer"]

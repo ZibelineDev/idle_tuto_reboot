@@ -9,7 +9,7 @@ var _upgrade : SilverGeneratorUpgrade02
 
 
 func _ready() -> void :
-	_upgrade = SilverGenerator.ref.get_upgrade_02()
+	_upgrade = GeneratorSilver.ref.get_upgrade_02()
 	_purchase_button.pressed.connect(_on_purchas_button_pressed)
 	_upgrade.leveled_up.connect(_on_upgrade_01_leveled_up)
 	ManagerSilver.ref.silver_updated.connect(_on_silver_updated)
