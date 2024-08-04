@@ -24,6 +24,8 @@ expand_mode = 1
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
+text = " Logs : "
 clip_text = true
 text_overrun_behavior = 3
 script = ExtResource("3_6l12d")
