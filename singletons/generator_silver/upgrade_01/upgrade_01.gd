@@ -12,8 +12,9 @@ var _bonus : Array[Vector2i] = [
 	Vector2i(8, 20),
 ]
 
-var _level : int = 0
 var _max_level : int = 3
+
+@onready var data : DataGeneratorSilver = Game.ref.data.generator_silver
 
 
 func get_title() -> String : 
@@ -25,27 +26,27 @@ func get_description() -> String :
 
 
 func get_cost() -> int :
-	if _level < 0 or _level >= _max_level : return -1
+	if data.upgrade_01_level < 0 or data.upgrade_01_level >= _max_level : return -1
 	
-	return _cost[int(_level)]
+	return _cost[int(data.upgrade_01_level)]
 
 
 func get_level() -> int :
-	return _level
+	return data.upgrade_01_level
 
 
 func get_bonus() -> Vector2i : 
-	if _level <= 0 or _level > _max_level : return Vector2i(0, 0)
+	if data.upgrade_01_level <= 0 or data.upgrade_01_level > _max_level : return Vector2i(0, 0)
 	
-	return _bonus[int(_level - 1)]
+	return _bonus[int(data.upgrade_01_level - 1)]
 
 
 func purchase_level() -> Error :
-	if _level >= _max_level : return FAILED
+	if data.upgrade_01_level >= _max_level : return FAILED
 	
 	if ManagerSilver.ref.spend_silver(get_cost()) != OK : return FAILED
 	
-	_level += 1
+	data.upgrade_01_level += 1
 	leveled_up.emit()
 	
 	return OK 

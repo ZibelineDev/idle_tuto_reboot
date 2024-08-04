@@ -13,17 +13,17 @@ signal silver_created(quantity : int)
 signal silver_spent(quantity : int)
 
 
-var _silver : int = 0
+@onready var data : Data = Game.ref.data
 
 
 func get_silver() -> int :
-	return _silver
+	return Game.ref.data.silver
 
 
 func create_silver(quantity : int) -> void : 
 	if quantity <= 0 : return
 	
-	_silver += quantity
+	data.silver += quantity
 	
 	silver_created.emit(quantity)
 	silver_updated.emit()
@@ -32,7 +32,7 @@ func create_silver(quantity : int) -> void :
 func can_spend(quantity : int) -> bool :
 	if quantity < 0 : return false
 	
-	if quantity > _silver : return false
+	if quantity > data.silver : return false
 	
 	return true
 
@@ -40,9 +40,9 @@ func can_spend(quantity : int) -> bool :
 func spend_silver(quantity : int) -> Error :
 	if quantity < 0 : return Error.FAILED
 	
-	if quantity > _silver : return Error.FAILED
+	if quantity > data.silver : return Error.FAILED
 	
-	_silver -= quantity
+	data.silver -= quantity
 	
 	silver_spent.emit(quantity)
 	silver_updated.emit()
