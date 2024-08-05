@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpc3um21hxuo1"]
+[gd_scene load_steps=8 format=3 uid="uid://cpc3um21hxuo1"]
 
 [ext_resource type="Script" path="res://scenes/views/village/generator_log/toggle.gd" id="1_51vjd"]
 [ext_resource type="Texture2D" uid="uid://sm4fobipoh2w" path="res://assets/icons/axe-in-stump under.png" id="1_60n3g"]
 [ext_resource type="Script" path="res://scenes/views/village/generator_log/generator_log.gd" id="1_bg66t"]
 [ext_resource type="Texture2D" uid="uid://d1ewvh7ry26lb" path="res://assets/icons/axe-in-stump.png" id="2_wqqju"]
 [ext_resource type="Script" path="res://scenes/views/village/generator_log/task_progress.gd" id="3_bqe0o"]
+[ext_resource type="PackedScene" uid="uid://cg3f6hktkh5ms" path="res://components/button_collapse/button_collapse.tscn" id="6_0jt7a"]
+[ext_resource type="PackedScene" uid="uid://do1v7647fu6d1" path="res://scenes/views/village/generator_silver/upgrade_01/upgrade_01.tscn" id="6_r3n2q"]
 
 [node name="GeneratorLog" type="PanelContainer"]
 anchors_preset = 14
@@ -64,54 +66,20 @@ size_flags_vertical = 4
 text = "On/Off"
 script = ExtResource("1_51vjd")
 
-[node name="Collapse" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(64, 64)
+[node name="Collapse" parent="MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("_target") instance=ExtResource("6_0jt7a")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
+_target = NodePath("../../GridContainer")
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 columns = 2
 
-[node name="Upgrade01" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="Upgrade01" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("6_r3n2q")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Description" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
-layout_mode = 2
-theme_type_variation = &"HeaderMedium"
-text = "Upgrade 01"
-
-[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 2
-text = "Here is some space to describe what the upgrade is doing."
-autowrap_mode = 3
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
-custom_minimum_size = Vector2(160, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Purchase
--1 Silver"
 
 [node name="Upgrade02" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 16

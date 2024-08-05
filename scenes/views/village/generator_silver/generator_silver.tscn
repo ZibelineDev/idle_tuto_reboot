@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlc1nni1kwli5"]
+
+[ext_resource type="Script" path="res://scenes/views/village/trading_goods.gd" id="1_6uwev"]
+[ext_resource type="Texture2D" uid="uid://cofxyfhu2ktkc" path="res://assets/icons/purse_under.png" id="2_ywos2"]
+[ext_resource type="Texture2D" uid="uid://dmmyrdjir3ts4" path="res://assets/icons/purse.png" id="3_n6v00"]
+[ext_resource type="Script" path="res://scenes/views/village/trading_goods_progress.gd" id="4_vgx31"]
+[ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="5_3nuiq"]
+[ext_resource type="PackedScene" uid="uid://d2r555q8panqw" path="res://components/upgrades/silver_generator/upgrade_01/upgrade_01.tscn" id="6_bihym"]
+[ext_resource type="PackedScene" uid="uid://bjglm1e57hxwd" path="res://components/upgrades/silver_generator/upgrade_02/upgrade_02.tscn" id="7_px4ph"]
+
+[node name="TradingGoods" type="PanelContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -168.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6uwev")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Description" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Trading Common Goods"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "The town is full of trading opportunities.
+Trade items to gain some Silver."
+autowrap_mode = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 4
+texture_under = ExtResource("2_ywos2")
+texture_progress = ExtResource("3_n6v00")
+script = ExtResource("4_vgx31")
+
+[node name="GeneratorToggleButton" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("5_3nuiq")]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+
+[node name="CollapseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+"
+
+[node name="CollapseContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="Upgrade01" parent="MarginContainer/VBoxContainer/CollapseContainer" instance=ExtResource("6_bihym")]
+layout_mode = 2
+
+[node name="Upgrade02" parent="MarginContainer/VBoxContainer/CollapseContainer" instance=ExtResource("7_px4ph")]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,5 +1,5 @@
 class_name GeneratorSilver
-extends Node
+extends Generator
 
 static var ref : GeneratorSilver
 
@@ -20,8 +20,10 @@ var _base_tick_duration : float = 2.5
 var _tick_duration : float
 
 @onready var _timer : Timer = get_node("Timer")
-@onready var _upgrade_01 : SilverGeneratorUpgrade01 = $Upgrade01
-@onready var _upgrade_02 : SilverGeneratorUpgrade02 = $Upgrade02
+@onready var _upgrade_01 : GeneratorSilverUpgrade01 = $Upgrade01
+@onready var _upgrade_02 : GeneratorSilverUpgrade02 = $Upgrade02
+
+@onready var _settings : DataSettings = Game.ref.data.settings
 
 
 func _ready() -> void :
@@ -30,15 +32,24 @@ func _ready() -> void :
 	_upgrade_02.leveled_up.connect(_on_upgrade_02_leveled_up)
 	_calculate_generated_silver_per_tick()
 	_calculate_tick_duration()
+	
+	if _settings.generator_silver_is_active : 
+		start()
 
 
 func start() -> void : 
+	if is_active() : return
+	if ManagerGenerator.ref.start_generator(self) != OK : return
+	
 	_timer.start()
+	_settings.generator_silver_is_active = true
 	generator_started.emit()
 
 
 func stop() -> void : 
+	ManagerGenerator.ref.stop_generator(self)
 	_timer.stop()
+	_settings.generator_silver_is_active = false
 	generator_stopped.emit()
 
 
@@ -51,11 +62,11 @@ func toggle() -> void :
 	else : start()
 
 
-func get_upgrade_01() -> SilverGeneratorUpgrade01 : 
+func get_upgrade_01() -> GeneratorSilverUpgrade01 : 
 	return _upgrade_01
 
 
-func get_upgrade_02() -> SilverGeneratorUpgrade02 : 
+func get_upgrade_02() -> GeneratorSilverUpgrade02 : 
 	return _upgrade_02
 
 

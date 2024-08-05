@@ -2,7 +2,7 @@ class_name ManagerSave
 
 
 const SAVE_PATH : String = "user://save.tres"
-const SHOULD_SAVE : bool = false
+const SHOULD_SAVE : bool = true
 const SHOULD_LOAD : bool = true
 
 

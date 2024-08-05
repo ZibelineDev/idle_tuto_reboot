@@ -1,16 +1,12 @@
 class_name Data
 extends Resource
 
-@export var silver : int
-@export var logs : int
+@export var silver : int = 0
+@export var logs : int = 0
 
-@export var generator_silver : DataGeneratorSilver
-@export var progression : DataProgression
+@export var generator_silver : DataGeneratorSilver = DataGeneratorSilver.new()
+@export var generator_log : DataGeneratorLog = DataGeneratorLog.new()
 
+@export var progression : DataProgression = DataProgression.new()
 
-func _init() -> void :
-	silver = 0 
-	logs = 0
-	
-	generator_silver = DataGeneratorSilver.new()
-	progression = DataProgression.new()
+@export var settings : DataSettings = DataSettings.new()

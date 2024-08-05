@@ -1,7 +1,7 @@
 extends MarginContainer
 
 
-var _upgrade : SilverGeneratorUpgrade02
+var _upgrade : GeneratorSilverUpgrade02
 
 @onready var _title : Label = get_node("HBoxContainer/Description/Title")
 @onready var _description : Label = get_node("HBoxContainer/Description/Description")

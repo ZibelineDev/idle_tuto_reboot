@@ -1,12 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmkdxgjy3xdrj"]
+[gd_scene load_steps=3 format=3 uid="uid://cmkdxgjy3xdrj"]
 
-[ext_resource type="Script" path="res://scenes/views/village/trading_goods.gd" id="1_btauh"]
-[ext_resource type="Texture2D" uid="uid://cofxyfhu2ktkc" path="res://assets/icons/purse_under.png" id="2_hpvtb"]
-[ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="2_uhwqb"]
-[ext_resource type="Texture2D" uid="uid://dmmyrdjir3ts4" path="res://assets/icons/purse.png" id="3_klhi7"]
-[ext_resource type="Script" path="res://scenes/views/village/trading_goods_progress.gd" id="4_prlkl"]
-[ext_resource type="PackedScene" uid="uid://d2r555q8panqw" path="res://components/upgrades/silver_generator/upgrade_01/upgrade_01.tscn" id="6_mmmnp"]
-[ext_resource type="PackedScene" uid="uid://bjglm1e57hxwd" path="res://components/upgrades/silver_generator/upgrade_02/upgrade_02.tscn" id="7_wnd7n"]
+[ext_resource type="PackedScene" uid="uid://dlc1nni1kwli5" path="res://scenes/views/village/generator_silver/generator_silver.tscn" id="1_k63rc"]
 [ext_resource type="PackedScene" uid="uid://cpc3um21hxuo1" path="res://scenes/views/village/generator_log/generator_log.tscn" id="8_qfgft"]
 
 [node name="Village" type="MarginContainer"]
@@ -35,73 +29,8 @@ text = "Village"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TradingGoods" type="PanelContainer" parent="VBoxContainer"]
+[node name="TradingGoods" parent="VBoxContainer" instance=ExtResource("1_k63rc")]
 layout_mode = 2
-script = ExtResource("1_btauh")
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TradingGoods"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TradingGoods/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Description" type="VBoxContainer" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Title" type="Label" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer/Description"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "Trading Common Goods"
-
-[node name="Description" type="Label" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer/Description"]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 2
-text = "The town is full of trading opportunities.
-Trade items to gain some Silver."
-autowrap_mode = 3
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-fill_mode = 4
-texture_under = ExtResource("2_hpvtb")
-texture_progress = ExtResource("3_klhi7")
-script = ExtResource("4_prlkl")
-
-[node name="GeneratorToggleButton" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_uhwqb")]
-custom_minimum_size = Vector2(160, 80)
-layout_mode = 2
-
-[node name="CollapseButton" type="Button" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
-
-[node name="CollapseContainer" type="GridContainer" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-columns = 2
-
-[node name="Upgrade01" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/CollapseContainer" instance=ExtResource("6_mmmnp")]
-layout_mode = 2
-
-[node name="Upgrade02" parent="VBoxContainer/TradingGoods/MarginContainer/VBoxContainer/CollapseContainer" instance=ExtResource("7_wnd7n")]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="LumberingCamp" parent="VBoxContainer" instance=ExtResource("8_qfgft")]
 layout_mode = 2

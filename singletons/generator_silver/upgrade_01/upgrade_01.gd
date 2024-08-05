@@ -1,4 +1,4 @@
-class_name SilverGeneratorUpgrade01
+class_name GeneratorSilverUpgrade01
 extends Node
 
 
