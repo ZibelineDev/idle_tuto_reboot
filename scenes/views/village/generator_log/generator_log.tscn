@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpc3um21hxuo1"]
+
+[ext_resource type="Script" path="res://scenes/views/village/generator_log/toggle.gd" id="1_51vjd"]
+[ext_resource type="Texture2D" uid="uid://sm4fobipoh2w" path="res://assets/icons/axe-in-stump under.png" id="1_xlcb5"]
+[ext_resource type="Texture2D" uid="uid://d1ewvh7ry26lb" path="res://assets/icons/axe-in-stump.png" id="2_k44h2"]
+[ext_resource type="Script" path="res://scenes/views/village/generator_log/task_progress.gd" id="3_bqe0o"]
+
+[node name="GeneratorLog" type="PanelContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -62.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Description" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Lumbering Camp"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "A lumbering camp. There is all the equipment needed to cut down some trees."
+autowrap_mode = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 4
+texture_under = ExtResource("1_xlcb5")
+texture_progress = ExtResource("2_k44h2")
+script = ExtResource("3_bqe0o")
+
+[node name="Toggle" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "On/Off"
+script = ExtResource("1_51vjd")
+
+[node name="Collapse" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+
+[node name="Upgrade01" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Description" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Upgrade 01"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Here is some space to describe what the upgrade is doing."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Purchase
+-1 Silver"
+
+[node name="Upgrade02" type="MarginContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Content" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade02"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Description" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content/Description"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Upgrade 02"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content/Description"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Here is some space to describe what the upgrade is doing."
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Purchase
+-1 Silver"

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmkdxgjy3xdrj"]
+[gd_scene load_steps=9 format=3 uid="uid://cmkdxgjy3xdrj"]
 
 [ext_resource type="Script" path="res://scenes/views/village/trading_goods.gd" id="1_btauh"]
+[ext_resource type="Texture2D" uid="uid://cofxyfhu2ktkc" path="res://assets/icons/purse_under.png" id="2_hpvtb"]
 [ext_resource type="PackedScene" uid="uid://bv3q713yk7i2j" path="res://components/button_generator_toggle/generator_toggle_button.tscn" id="2_uhwqb"]
-[ext_resource type="Texture2D" uid="uid://cofxyfhu2ktkc" path="res://assets/icons/purse_background.png" id="2_xxb1s"]
 [ext_resource type="Texture2D" uid="uid://dmmyrdjir3ts4" path="res://assets/icons/purse.png" id="3_klhi7"]
 [ext_resource type="Script" path="res://scenes/views/village/trading_goods_progress.gd" id="4_prlkl"]
 [ext_resource type="PackedScene" uid="uid://d2r555q8panqw" path="res://components/upgrades/silver_generator/upgrade_01/upgrade_01.tscn" id="6_mmmnp"]
 [ext_resource type="PackedScene" uid="uid://bjglm1e57hxwd" path="res://components/upgrades/silver_generator/upgrade_02/upgrade_02.tscn" id="7_wnd7n"]
+[ext_resource type="PackedScene" uid="uid://cpc3um21hxuo1" path="res://scenes/views/village/generator_log/generator_log.tscn" id="8_qfgft"]
 
 [node name="Village" type="MarginContainer"]
 anchors_preset = 15
@@ -74,7 +75,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 fill_mode = 4
-texture_under = ExtResource("2_xxb1s")
+texture_under = ExtResource("2_hpvtb")
 texture_progress = ExtResource("3_klhi7")
 script = ExtResource("4_prlkl")
 
@@ -102,124 +103,5 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FutureContent" type="PanelContainer" parent="VBoxContainer"]
+[node name="FutureContent" parent="VBoxContainer" instance=ExtResource("8_qfgft")]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/FutureContent"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Description" type="VBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/HBoxContainer/Description"]
-layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "Future Content"
-
-[node name="Label2" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/HBoxContainer/Description"]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 2
-text = "Another task which will be added later."
-autowrap_mode = 3
-
-[node name="Toggle" type="Button" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(160, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "On/Off"
-
-[node name="Collapse" type="Button" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-columns = 2
-
-[node name="Upgrade01" type="MarginContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade01"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Description" type="VBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Title" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
-layout_mode = 2
-theme_type_variation = &"HeaderMedium"
-text = "Upgrade 01"
-
-[node name="Description" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer/Description"]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 2
-text = "Here is some space to describe what the upgrade is doing."
-autowrap_mode = 3
-
-[node name="Button" type="Button" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade01/HBoxContainer"]
-custom_minimum_size = Vector2(160, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Purchase
--1 Silver"
-
-[node name="Upgrade02" type="MarginContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="Content" type="HBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade02"]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Description" type="VBoxContainer" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Title" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content/Description"]
-layout_mode = 2
-theme_type_variation = &"HeaderMedium"
-text = "Upgrade 02"
-
-[node name="Description" type="Label" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content/Description"]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 2
-text = "Here is some space to describe what the upgrade is doing."
-autowrap_mode = 3
-
-[node name="Button" type="Button" parent="VBoxContainer/FutureContent/MarginContainer/VBoxContainer/GridContainer/Upgrade02/Content"]
-custom_minimum_size = Vector2(160, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Purchase
--1 Silver"

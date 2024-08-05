@@ -13,17 +13,17 @@ signal log_created(quantity : int)
 signal log_spent(quantity : int)
 
 
-var _log : int = 0
+@onready var data : Data = Game.ref.data
 
 
 func get_log() -> int : 
-	return _log
+	return data.logs
 
 
 func create_log(quantity : int) -> Error : 
 	if quantity <= 0 : return FAILED
 	
-	_log += quantity
+	data.logs += quantity
 	log_updated.emit()
 	log_created.emit(quantity)
 	
@@ -31,15 +31,15 @@ func create_log(quantity : int) -> Error :
 
 
 func can_spend(quantity : int) -> bool : 
-	if quantity < 0 or quantity > _log : return false
+	if quantity < 0 or quantity > data.logs : return false
 	
 	return true
 
 
 func spend_log(quantity : int) -> Error :
-	if quantity < 0 or quantity > _log : return FAILED
+	if quantity < 0 or quantity > data.logs : return FAILED
 	
-	_log -= quantity
+	data.logs -= quantity
 	log_updated.emit()
 	log_spent.emit(quantity)
 	

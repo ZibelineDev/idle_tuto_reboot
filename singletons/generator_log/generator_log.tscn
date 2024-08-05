@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://su2om5gnjgsv"]
+
+[ext_resource type="Script" path="res://singletons/generator_log/generator_log.gd" id="1_5e0kt"]
+
+[node name="GeneratorLog" type="Node"]
+script = ExtResource("1_5e0kt")
+
+[node name="Timer" type="Timer" parent="."]
