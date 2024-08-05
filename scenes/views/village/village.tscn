@@ -103,5 +103,5 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FutureContent" parent="VBoxContainer" instance=ExtResource("8_qfgft")]
+[node name="LumberingCamp" parent="VBoxContainer" instance=ExtResource("8_qfgft")]
 layout_mode = 2
