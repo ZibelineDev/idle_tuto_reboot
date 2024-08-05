@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://pyn5vmg1peyl"]
+[gd_scene load_steps=8 format=3 uid="uid://pyn5vmg1peyl"]
 
 [ext_resource type="PackedScene" uid="uid://wbi4it18ciar" path="res://singletons/manager_silver/manager_silver.tscn" id="1_5jhbe"]
 [ext_resource type="Script" path="res://singletons/game/game.gd" id="1_ojtv4"]
 [ext_resource type="PackedScene" uid="uid://cpf3oqwngfo4n" path="res://singletons/manager_log/manager_log.tscn" id="2_f63et"]
 [ext_resource type="PackedScene" uid="uid://cl5t3dlirbq4t" path="res://singletons/generator_silver/generator_silver.tscn" id="2_vfa15"]
 [ext_resource type="PackedScene" uid="uid://cu26oi1spy512" path="res://scenes/user_interface/user_interface.tscn" id="3_rtepl"]
+[ext_resource type="PackedScene" uid="uid://d2gjl7aanxqpw" path="res://singletons/manager_quest/manager_quest.tscn" id="4_g2a0a"]
 [ext_resource type="PackedScene" uid="uid://su2om5gnjgsv" path="res://singletons/generator_log/generator_log.tscn" id="5_modxl"]
 
 [node name="Game" type="Node"]
@@ -19,6 +20,8 @@ autostart = true
 [node name="ManagerSilver" parent="Currencies" instance=ExtResource("1_5jhbe")]
 
 [node name="ManagerLog" parent="Currencies" instance=ExtResource("2_f63et")]
+
+[node name="ManagerQuest" parent="." instance=ExtResource("4_g2a0a")]
 
 [node name="Generators" type="Node" parent="."]
 

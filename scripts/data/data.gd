@@ -5,6 +5,7 @@ extends Resource
 @export var logs : int
 
 @export var generator_silver : DataGeneratorSilver
+@export var progression : DataProgression
 
 
 func _init() -> void :
@@ -12,3 +13,4 @@ func _init() -> void :
 	logs = 0
 	
 	generator_silver = DataGeneratorSilver.new()
+	progression = DataProgression.new()

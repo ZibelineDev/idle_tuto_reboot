@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2gjl7aanxqpw"]
+
+[ext_resource type="Script" path="res://singletons/manager_quest/manager_quest.gd" id="1_xva87"]
+[ext_resource type="PackedScene" uid="uid://dguac4j3sccsy" path="res://singletons/manager_quest/tuto_quests/tuto_quest_01/tuto_quest_01.tscn" id="2_r8n74"]
+
+[node name="ManagerQuest" type="Node"]
+script = ExtResource("1_xva87")
+
+[node name="TutoQuest01" parent="." instance=ExtResource("2_r8n74")]

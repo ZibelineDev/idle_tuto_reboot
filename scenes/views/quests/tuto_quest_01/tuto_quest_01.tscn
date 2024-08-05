@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0mipop42luxs"]
+[gd_scene load_steps=3 format=3 uid="uid://c0mipop42luxs"]
 
+[ext_resource type="Script" path="res://scenes/views/quests/tuto_quest_01/tuto_quest_01.gd" id="1_g7ljw"]
 [ext_resource type="PackedScene" uid="uid://cg3f6hktkh5ms" path="res://components/button_collapse/button_collapse.tscn" id="2_03i2g"]
 
 [node name="Quest01" type="MarginContainer"]
@@ -15,6 +16,7 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+script = ExtResource("1_g7ljw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
