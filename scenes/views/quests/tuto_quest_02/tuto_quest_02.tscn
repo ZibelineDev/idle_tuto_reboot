@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://ra4vo1ow2etu"]
+
+[ext_resource type="Script" path="res://scenes/views/quests/tuto_quest_02/tuto_quest_02.gd" id="1_aiifh"]
+[ext_resource type="PackedScene" uid="uid://cg3f6hktkh5ms" path="res://components/button_collapse/button_collapse.tscn" id="2_1hsk1"]
+
+[node name="Quest02" type="MarginContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -137.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_aiifh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderMedium"
+text = "Title"
+autowrap_mode = 2
+
+[node name="Collapse" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("_target") instance=ExtResource("2_1hsk1")]
+layout_mode = 2
+_target = NodePath("../../VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Description[/center]"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+show_percentage = false
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Purchase
+Value : Silver"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lokwnwwo5dxc"]
+
+[ext_resource type="Script" path="res://singletons/manager_quest/tuto_quests/tuto_quest_02/tuto_quest_02.gd" id="1_iyhcm"]
+
+[node name="TutoQuest02" type="Node"]
+script = ExtResource("1_iyhcm")

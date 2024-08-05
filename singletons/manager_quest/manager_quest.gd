@@ -13,3 +13,7 @@ func _init() -> void :
 
 func get_tuto_quest_01() -> TutoQuest01 : 
 	return $TutoQuest01
+
+
+func get_tuto_quest_02() -> TutoQuest02 : 
+	return $TutoQuest02

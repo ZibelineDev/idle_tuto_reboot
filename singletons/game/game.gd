@@ -1,11 +1,14 @@
 class_name Game
 extends Node
 
+
+#region New Code Region
 static var ref : Game
 
 func _init() -> void :
 	if not ref : ref = self
 	else : queue_free()
+#endregion
 
 
 var data : Data

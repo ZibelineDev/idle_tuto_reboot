@@ -1,9 +1,13 @@
 class_name ManagerSave
 
+
 const SAVE_PATH : String = "user://save.tres"
-const SHOULD_LOAD : bool = false
+const SHOULD_SAVE : bool = false
+const SHOULD_LOAD : bool = true
+
 
 static func save_data() -> void : 
+	if not SHOULD_SAVE : return
 	ResourceSaver.save(Game.ref.data, SAVE_PATH)
 
 

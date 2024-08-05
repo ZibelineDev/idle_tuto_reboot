@@ -19,7 +19,7 @@ func get_description() -> String :
 
 
 func get_title() -> String :
-	var text : String = "Acquiring the Old Lumberin Camp"
+	var text : String = "Acquiring the Old Lumbering Camp"
 	
 	if is_completed() : text += " (Completed)"
 	

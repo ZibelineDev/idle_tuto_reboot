@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfx6wj1xj2tub"]
+[gd_scene load_steps=3 format=3 uid="uid://bfx6wj1xj2tub"]
 
 [ext_resource type="PackedScene" uid="uid://c0mipop42luxs" path="res://scenes/views/quests/tuto_quest_01/tuto_quest_01.tscn" id="1_5iul0"]
+[ext_resource type="PackedScene" uid="uid://ra4vo1ow2etu" path="res://scenes/views/quests/tuto_quest_02/tuto_quest_02.tscn" id="2_gfph1"]
 
 [node name="Quests" type="MarginContainer"]
 anchors_preset = 15
@@ -31,5 +32,11 @@ vertical_alignment = 1
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Quest01" parent="VBoxContainer/PanelContainer2" instance=ExtResource("1_5iul0")]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="Quest01" parent="VBoxContainer/PanelContainer2/VBoxContainer" instance=ExtResource("1_5iul0")]
+layout_mode = 2
+
+[node name="Quest02" parent="VBoxContainer/PanelContainer2/VBoxContainer" instance=ExtResource("2_gfph1")]
 layout_mode = 2
