@@ -24,6 +24,8 @@ var _active_generators : Array[Generator]
 
 
 func _ready() -> void :
+	_calculate_generator_limit()
+	
 	if not _progression.tuto_quest_02_completed : 
 		ManagerQuest.ref.get_tuto_quest_02().completed.connect(_on_tuto_quest_02_completed)
 
