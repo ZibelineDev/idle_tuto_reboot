@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pyn5vmg1peyl"]
+[gd_scene load_steps=12 format=3 uid="uid://pyn5vmg1peyl"]
 
 [ext_resource type="PackedScene" uid="uid://wbi4it18ciar" path="res://singletons/manager_silver/manager_silver.tscn" id="1_5jhbe"]
 [ext_resource type="Script" path="res://singletons/game/game.gd" id="1_ojtv4"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cl5t3dlirbq4t" path="res://singletons/generator_silver/generator_silver.tscn" id="2_vfa15"]
 [ext_resource type="PackedScene" uid="uid://cu26oi1spy512" path="res://scenes/user_interface/user_interface.tscn" id="3_rtepl"]
 [ext_resource type="PackedScene" uid="uid://d2gjl7aanxqpw" path="res://singletons/manager_quest/manager_quest.tscn" id="4_g2a0a"]
+[ext_resource type="PackedScene" uid="uid://cqaak5lmo8mgi" path="res://singletons/manager_plank/manager_plank.tscn" id="4_tqv60"]
 [ext_resource type="PackedScene" uid="uid://c5g547g0iou3s" path="res://singletons/manager_generator/manager_generator.tscn" id="5_gdsqq"]
 [ext_resource type="PackedScene" uid="uid://su2om5gnjgsv" path="res://singletons/generator_log/generator_log.tscn" id="5_modxl"]
+[ext_resource type="PackedScene" uid="uid://cv8nuqd45pdnv" path="res://singletons/manager_market/manager_market.tscn" id="8_s13yi"]
+[ext_resource type="PackedScene" uid="uid://s6k18w683q3h" path="res://singletons/generator_plank/generator_plank.tscn" id="9_uvhgl"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ojtv4")
@@ -22,6 +25,8 @@ autostart = true
 
 [node name="ManagerLog" parent="Currencies" instance=ExtResource("2_f63et")]
 
+[node name="ManagerPlank" parent="Currencies" instance=ExtResource("4_tqv60")]
+
 [node name="ManagerQuest" parent="." instance=ExtResource("4_g2a0a")]
 
 [node name="ManagerGenerator" parent="." instance=ExtResource("5_gdsqq")]
@@ -29,5 +34,9 @@ autostart = true
 [node name="GeneratorSilver" parent="ManagerGenerator" instance=ExtResource("2_vfa15")]
 
 [node name="GeneratorLog" parent="ManagerGenerator" instance=ExtResource("5_modxl")]
+
+[node name="GeneratorPlank" parent="ManagerGenerator" instance=ExtResource("9_uvhgl")]
+
+[node name="ManagerMarket" parent="." instance=ExtResource("8_s13yi")]
 
 [node name="UserInterface" parent="." instance=ExtResource("3_rtepl")]

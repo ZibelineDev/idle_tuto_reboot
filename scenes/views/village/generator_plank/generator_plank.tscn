@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpc3um21hxuo1"]
+[gd_scene load_steps=7 format=3 uid="uid://ge7bcoimvapa"]
 
-[ext_resource type="Script" path="res://scenes/views/village/generator_log/toggle.gd" id="1_51vjd"]
-[ext_resource type="Script" path="res://scenes/views/village/generator_log/generator_log.gd" id="1_bg66t"]
-[ext_resource type="Texture2D" uid="uid://sm4fobipoh2w" path="res://assets/icons/axe-in-stump_under.png" id="2_4x86m"]
-[ext_resource type="Texture2D" uid="uid://d1ewvh7ry26lb" path="res://assets/icons/axe-in-stump.png" id="2_wqqju"]
-[ext_resource type="Script" path="res://scenes/views/village/generator_log/task_progress.gd" id="3_bqe0o"]
-[ext_resource type="PackedScene" uid="uid://cg3f6hktkh5ms" path="res://components/button_collapse/button_collapse.tscn" id="6_0jt7a"]
-[ext_resource type="PackedScene" uid="uid://do1v7647fu6d1" path="res://scenes/views/village/generator_silver/upgrade_01/upgrade_01.tscn" id="6_r3n2q"]
+[ext_resource type="Script" path="res://scenes/views/village/generator_plank/generator_plank.gd" id="1_fe6fp"]
+[ext_resource type="Texture2D" uid="uid://b70863b6frpvo" path="res://assets/icons/cleaver_under.png" id="2_xgwo0"]
+[ext_resource type="Texture2D" uid="uid://c3q3g3lgywlj" path="res://assets/icons/cleaver.png" id="3_3rfxk"]
+[ext_resource type="Script" path="res://scenes/views/village/generator_plank/task_progress.gd" id="4_u0mcb"]
+[ext_resource type="Script" path="res://scenes/views/village/generator_plank/toggle.gd" id="5_ma2bh"]
+[ext_resource type="PackedScene" uid="uid://cg3f6hktkh5ms" path="res://components/button_collapse/button_collapse.tscn" id="6_86mjf"]
 
-[node name="GeneratorLog" type="PanelContainer"]
+[node name="GeneratorPlank" type="PanelContainer"]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -17,7 +16,7 @@ offset_top = -62.0
 offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bg66t")
+script = ExtResource("1_fe6fp")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -41,12 +40,12 @@ size_flags_horizontal = 3
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Lumbering Camp"
+text = "Sawmill"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
-text = "A lumbering camp. There is all the equipment needed to cut down some trees."
+text = "You can process Logs into Planks here."
 autowrap_mode = 3
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -54,9 +53,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 fill_mode = 4
-texture_under = ExtResource("2_4x86m")
-texture_progress = ExtResource("2_wqqju")
-script = ExtResource("3_bqe0o")
+texture_under = ExtResource("2_xgwo0")
+texture_progress = ExtResource("3_3rfxk")
+script = ExtResource("4_u0mcb")
 
 [node name="Toggle" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(160, 80)
@@ -64,9 +63,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "On/Off"
-script = ExtResource("1_51vjd")
+script = ExtResource("5_ma2bh")
 
-[node name="Collapse" parent="MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("_target") instance=ExtResource("6_0jt7a")]
+[node name="Collapse" parent="MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("_target") instance=ExtResource("6_86mjf")]
 layout_mode = 2
 _target = NodePath("../../GridContainer")
 
@@ -74,6 +73,3 @@ _target = NodePath("../../GridContainer")
 visible = false
 layout_mode = 2
 columns = 2
-
-[node name="Upgrade01" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("6_r3n2q")]
-layout_mode = 2

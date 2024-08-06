@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3wtefmu3xkb0"]
+
+[ext_resource type="Script" path="res://singletons/manager_market/items/market_log/market_log.gd" id="1_qfwsk"]
+
+[node name="MarketLog" type="Node"]
+script = ExtResource("1_qfwsk")

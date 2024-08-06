@@ -2,7 +2,7 @@ class_name Game
 extends Node
 
 
-#region New Code Region
+#region Singleton Region
 static var ref : Game
 
 func _init() -> void :

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmkdxgjy3xdrj"]
+[gd_scene load_steps=4 format=3 uid="uid://cmkdxgjy3xdrj"]
 
 [ext_resource type="PackedScene" uid="uid://dlc1nni1kwli5" path="res://scenes/views/village/generator_silver/generator_silver.tscn" id="1_k63rc"]
+[ext_resource type="PackedScene" uid="uid://ge7bcoimvapa" path="res://scenes/views/village/generator_plank/generator_plank.tscn" id="3_ndr0w"]
 [ext_resource type="PackedScene" uid="uid://cpc3um21hxuo1" path="res://scenes/views/village/generator_log/generator_log.tscn" id="8_qfgft"]
 
 [node name="Village" type="MarginContainer"]
@@ -33,4 +34,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="LumberingCamp" parent="VBoxContainer" instance=ExtResource("8_qfgft")]
+layout_mode = 2
+
+[node name="GeneratorPlank" parent="VBoxContainer" instance=ExtResource("3_ndr0w")]
 layout_mode = 2

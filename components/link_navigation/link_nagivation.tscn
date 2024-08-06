@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ntd7lge3wed"]
+
+[ext_resource type="Texture2D" uid="uid://boygu2xnxcfar" path="res://assets/icons/chart.png" id="1_ck8kr"]
+[ext_resource type="Script" path="res://components/link_navigation/link_nagivation.gd" id="1_ieuir"]
+
+[node name="LinkNavigation" type="HBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ieuir")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_ck8kr")
+expand_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 2
+text = "Link Button"
