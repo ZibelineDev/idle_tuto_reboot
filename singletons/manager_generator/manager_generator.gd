@@ -20,12 +20,15 @@ enum Generators {
 var _generator_limit : int = 1
 var _active_generators : Array[Generator]
 
-@onready var _progression : DataProgression = Game.ref.data.progression
+var _progression : DataProgression
+
+
+func _enter_tree() -> void :
+	_progression = Game.ref.data.progression
+	_calculate_generator_limit()
 
 
 func _ready() -> void :
-	_calculate_generator_limit()
-	
 	if not _progression.tuto_quest_02_completed : 
 		ManagerQuest.ref.get_tuto_quest_02().completed.connect(_on_tuto_quest_02_completed)
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfgqkghn7jtn"]
 
-[ext_resource type="Script" path="res://components/label_silver/label_silver.gd" id="1_4sa7j"]
+[ext_resource type="Script" path="res://components/labels/label_silver/label_silver.gd" id="1_4sa7j"]
 [ext_resource type="Texture2D" uid="uid://cgo83v0ihrk3x" path="res://assets/icons/coins.png" id="1_fvx8s"]
 
 [node name="LabelSilver" type="HBoxContainer"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj27ojvkylfji"]
+
+[ext_resource type="Texture2D" uid="uid://qdurp1kgu6s6" path="res://assets/icons/planks.png" id="1_6wb1m"]
+[ext_resource type="Script" path="res://components/labels/label_plank/label_plank.gd" id="1_rpdgm"]
+
+[node name="LabelPlank" type="HBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rpdgm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_6wb1m")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Plank Value : "

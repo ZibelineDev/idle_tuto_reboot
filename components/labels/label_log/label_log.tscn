@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct2n74mmxlkcu"]
 
-[ext_resource type="Texture2D" uid="uid://ceyqsxia2y8xt" path="res://assets/icons/log.png" id="1_2w71u"]
-[ext_resource type="Script" path="res://components/label_log/label_log.gd" id="1_aqtel"]
-[ext_resource type="Script" path="res://components/label_log/label.gd" id="3_6l12d"]
+[ext_resource type="Script" path="res://components/labels/label_log/label_log.gd" id="1_1ailr"]
+[ext_resource type="Texture2D" uid="uid://ceyqsxia2y8xt" path="res://assets/icons/log.png" id="2_ru6yy"]
+[ext_resource type="Script" path="res://components/labels/label_log/label.gd" id="3_gnl67"]
 
 [node name="LabelLog" type="HBoxContainer"]
 anchors_preset = 14
@@ -13,13 +13,13 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_aqtel")
+script = ExtResource("1_1ailr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-texture = ExtResource("1_2w71u")
+texture = ExtResource("2_ru6yy")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
@@ -29,4 +29,4 @@ mouse_filter = 1
 text = " Logs : "
 clip_text = true
 text_overrun_behavior = 3
-script = ExtResource("3_6l12d")
+script = ExtResource("3_gnl67")

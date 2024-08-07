@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu26oi1spy512"]
+[gd_scene load_steps=14 format=3 uid="uid://cu26oi1spy512"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/user_interface.gd" id="1_yjqbu"]
 [ext_resource type="Texture2D" uid="uid://b5cskke7djqh6" path="res://assets/icons/mushroom_house.png" id="2_argk2"]
 [ext_resource type="Texture2D" uid="uid://dbed2c3mnqlm0" path="res://assets/icons/tied_scroll.png" id="2_bq8j7"]
 [ext_resource type="Script" path="res://scenes/user_interface/navigation_button.gd" id="2_w1f2f"]
-[ext_resource type="PackedScene" uid="uid://cfgqkghn7jtn" path="res://components/label_silver/label_silver.tscn" id="4_f8na8"]
+[ext_resource type="PackedScene" uid="uid://cfgqkghn7jtn" path="res://components/labels/label_silver/label_silver.tscn" id="4_f8na8"]
 [ext_resource type="PackedScene" uid="uid://cmkdxgjy3xdrj" path="res://scenes/views/village/village.tscn" id="5_24757"]
 [ext_resource type="PackedScene" uid="uid://d1ntd7lge3wed" path="res://components/link_navigation/link_nagivation.tscn" id="5_aq4bn"]
-[ext_resource type="PackedScene" uid="uid://ct2n74mmxlkcu" path="res://components/label_log/label_log.tscn" id="5_cpj55"]
+[ext_resource type="PackedScene" uid="uid://ct2n74mmxlkcu" path="res://components/labels/label_log/label_log.tscn" id="5_cpj55"]
 [ext_resource type="Texture2D" uid="uid://boygu2xnxcfar" path="res://assets/icons/chart.png" id="6_tf4lb"]
 [ext_resource type="PackedScene" uid="uid://bfx6wj1xj2tub" path="res://scenes/views/quests/quests.tscn" id="8_nqqhm"]
+[ext_resource type="PackedScene" uid="uid://bj27ojvkylfji" path="res://components/labels/label_plank/label_plank.tscn" id="9_akvqn"]
 [ext_resource type="PackedScene" uid="uid://cfme6upb7avbh" path="res://scenes/views/market/view_market.tscn" id="11_887fa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lwjp"]
@@ -105,6 +106,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="LabelLog" parent="HBoxContainer/LeftPanel/Resources/VBoxContainer" instance=ExtResource("5_cpj55")]
+layout_mode = 2
+
+[node name="LabelPlank" parent="HBoxContainer/LeftPanel/Resources/VBoxContainer" instance=ExtResource("9_akvqn")]
 layout_mode = 2
 
 [node name="MainView" type="TabContainer" parent="HBoxContainer"]
