@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlc1nni1kwli5"]
+[gd_scene load_steps=9 format=3 uid="uid://dlc1nni1kwli5"]
 
 [ext_resource type="Script" path="res://scenes/views/village/trading_goods.gd" id="1_6uwev"]
+[ext_resource type="Script" path="res://scenes/views/village/generator_silver/label_title.gd" id="2_fbbop"]
 [ext_resource type="Texture2D" uid="uid://cofxyfhu2ktkc" path="res://assets/icons/purse_under.png" id="2_ywos2"]
 [ext_resource type="Texture2D" uid="uid://dmmyrdjir3ts4" path="res://assets/icons/purse.png" id="3_n6v00"]
 [ext_resource type="Script" path="res://scenes/views/village/trading_goods_progress.gd" id="4_vgx31"]
@@ -42,6 +43,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Trading Common Goods"
+script = ExtResource("2_fbbop")
 
 [node name="Description" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Description"]
 custom_minimum_size = Vector2(1, 1)

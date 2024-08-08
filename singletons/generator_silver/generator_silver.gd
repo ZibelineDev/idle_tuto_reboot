@@ -83,13 +83,17 @@ func _generate_silver() -> void :
 	var roll : int = randi_range(_generated_silver_per_tick.x, _generated_silver_per_tick.y)
 	
 	ManagerSilver.ref.create_silver(roll)
-	print("Silver Generated : %s" %roll)
+	ManagerSkill.ref.add_experience(ManagerSkill.Skills.TRADING, 3)
+	
+	print("+%s Silver" %roll)
 	
 	generated_silver.emit()
 
 
 func _calculate_generated_silver_per_tick() -> void : 
-	_generated_silver_per_tick = _base_generated_silver_per_tick + _upgrade_01.get_bonus()
+	_generated_silver_per_tick = _base_generated_silver_per_tick 
+	_generated_silver_per_tick += _upgrade_01.get_bonus()
+	_generated_silver_per_tick *= (1 + ManagerSkill.ref.get_bonus(ManagerSkill.Skills.TRADING))
 
 
 func _calculate_tick_duration() -> void :

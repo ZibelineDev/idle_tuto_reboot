@@ -13,7 +13,7 @@ config_version=5
 config/name="idle_tuto_reboot"
 run/main_scene="res://singletons/game/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icons/purse.png"
 
 [debug]
 

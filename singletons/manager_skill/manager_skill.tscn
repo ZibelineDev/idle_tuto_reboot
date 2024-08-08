@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7dews2s4604c"]
+
+[ext_resource type="Script" path="res://singletons/manager_skill/manager_skill.gd" id="1_sprkq"]
+
+[node name="ManagerSkill" type="Node"]
+script = ExtResource("1_sprkq")

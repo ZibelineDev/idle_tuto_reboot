@@ -11,5 +11,6 @@ extends Resource
 
 @export var progression : DataProgression = DataProgression.new()
 @export var market : DataMarket = DataMarket.new()
+@export var skills : DataSkill = DataSkill.new()
 
 @export var settings : DataSettings = DataSettings.new()
